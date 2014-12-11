@@ -30,20 +30,12 @@ gulp.task('images', function() {
 });
 
 gulp.task('fonts', function() {
-  gulp.src('bower_components/bootstrap/fonts/*', { 
-    base: 'bower_components/bootstrap/'
-  }).pipe(gulp.dest(dist));
-
-  gulp.src('bower_components/font-awesome/fonts/*', { 
-    base: 'bower_components/font-awesome/'
-  }).pipe(gulp.dest(dist));
+//  gulp.src('bower_components/bootstrap/fonts/*', { 
+//    base: 'bower_components/bootstrap/'
+//  }).pipe(gulp.dest(dist));
 });
 
 gulp.task('maps', function() {
-  gulp.src('bower_components/bootstrap/dist/css/*.map', { 
-    base: 'bower_components/bootstrap/dist/css/'
-  }).pipe(gulp.dest(dist + '/styles/'));
-
   gulp.src('bower_components/angular-animate/angular-animate.min.js.map', { 
     base: 'bower_components/angular-animate/'
   }).pipe(gulp.dest(dist + '/scripts/'));
@@ -67,22 +59,6 @@ gulp.task('build', ['misc'], function() {
   var assets = useref.assets();
 
   gulp.src('app/**/*.html')
-    //.pipe(replace(/<all-ng-template><\/all-ng-template>/, 
-    //  function(str) {
-    //    var contents = '';
-    //    var viewsRoot = 'app/views/';
-    //    var templates = fs.readdirSync(viewsRoot);
-
-    //    templates.forEach(function(template, index) {
-    //      var content = fs.readFileSync(viewsRoot + template, 'utf8');
-    //      contents += '\n<script type="text/ng-template" id="' + template + '">\n';
-    //      contents += content;
-    //      contents += '\n</script>\n';
-    //    });
-
-    //    return contents;
-    //  }
-    //))
     .pipe(assets)
     .pipe(gulpif(
       argv.production,

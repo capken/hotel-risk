@@ -1,20 +1,16 @@
 'use strict';
 
-angular.module('mapclipper', ['ui.router', 'ui.bootstrap'])
+angular.module('sample_app', ['ui.router'])
 
 .config(['$stateProvider', '$urlRouterProvider', 
   function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/google_maps');
+    $urlRouterProvider.otherwise('/default');
 
     $stateProvider
-    .state('map', {
-      url: '/google_maps',
-      templateUrl: 'views/google_maps.html'
-    })
-    .state('privacy', {
-      url: '/privacy_policy',
-      templateUrl: 'views/privacy_policy.html'
+    .state('default', {
+      url: '/default',
+      templateUrl: 'views/default.html'
     });
   }
 ]);

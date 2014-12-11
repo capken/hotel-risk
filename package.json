@@ -1,5 +1,5 @@
 {
-  "name": "mapclipper",
+  "name": "sample_app",
   "version": "0.0.1",
   "devDependencies": {
     "gulp": "^3.8.10",

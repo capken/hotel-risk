@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('mapclipper')
+angular.module('sample_app')
 .controller('MainCtrl', function ($scope) {
 });
