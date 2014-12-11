@@ -1,1 +1,1 @@
-mapclipper
+Sample App
