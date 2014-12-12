@@ -9,3 +9,5 @@ gulp build --production
 
 echo "launch the web app ..."
 (cd server && bundle install && ruby app.rb)
+
+open http://localhost:4567/
