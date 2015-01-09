@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "半岛酒店",
+    "address": "黄浦区 中山东一路32号(北京东路)",
+    "img": "http://i1.dpfile.com/pc/8a27ed4be10ea9e226cef5adf56d1f92/33975609_m.jpg"
+  },
+  {
+    "id": 2,
+    "name": "外滩华尔道夫酒店",
+    "address": "黄浦区 中山东一路2号(近延安东路)",
+    "img": "http://i1.dpfile.com/pc/94a4344b49faa9e7c7fb61409c691a21/55402005_m.jpg"
+  },
+  {
+    "id": 3,
+    "name": "香格里拉大酒店",
+    "address": "浦东新区 富城路33号(近名商路)",
+    "img": "http://i3.dpfile.com/pc/5752d87b32297c8bc72056bdcfdddc0e/54790493_m.jpg"
+  }
+]

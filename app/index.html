@@ -11,16 +11,35 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.min.css">
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/jumbotron-narrow.css">
     <!-- endbuild -->
   </head>
 
   <body ng-app="sample_app" ng-controller="MainCtrl">
-    <div ui-view></div>
+
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#/hotels">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Hotel Risk Rating</h3>
+      </div>
+
+      <div ui-view></div>
+    </div>
+
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -32,6 +51,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -39,6 +59,7 @@
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services.js"></script>
     <!-- endbuild -->
   </body>
 </html>
