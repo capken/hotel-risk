@@ -1,5 +1,5 @@
 <div class="input-group">
-  <input type="text" class="form-control" ng-model="keywords" placeholder="Hotel name...">
+  <input type="text" class="form-control" ng-model="keywords" placeholder="Hotel name..." />
   <span class="input-group-btn">
     <button class="btn btn-default" ng-click="search()" type="button">Search</button>
   </span>
@@ -10,7 +10,7 @@
 <div class="list-group">
   <div class="media" ng-repeat="hotel in hotels">
     <a class="media-left" href="#/hotels/{{hotel.id}}">
-      <img class="hotel-img img-rounded" ng-src="{{hotel.img}}" alt="img">
+      <img class="hotel-img img-rounded" ng-src="{{mapImageURL(hotel)}}" alt="img">
     </a>
     <div class="media-body">
     <h4 class="list-group-item-heading">{{hotel.name}}</h4>

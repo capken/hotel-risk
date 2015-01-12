@@ -10,7 +10,8 @@ angular.module('sample_app', ['ui.router', 'ui.bootstrap'])
     $stateProvider
     .state('hotels', {
       url: '/hotels',
-      templateUrl: 'views/default.html'
+      templateUrl: 'views/default.html',
+      controller: 'MainCtrl'
     });
 
     $stateProvider

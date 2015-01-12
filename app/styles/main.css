@@ -8,3 +8,11 @@
   margin-top: -23px;
   margin-right: -11px;
 }
+
+#map {
+  height: 300px;
+}
+
+#streetView {
+  height: 300px;
+}

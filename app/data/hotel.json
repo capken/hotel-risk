@@ -11,5 +11,7 @@
   "amountOfRooms": 150,
   "averagePrice": 800,
   "averageOccupancyRate": 0.75,
-  "numOfAccidentInPast3Years": 0
+  "numOfAccidentInPast3Years": 0,
+  "lat": 121.48,
+  "lng": 31.22
 }
