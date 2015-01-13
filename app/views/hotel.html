@@ -1,11 +1,20 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">{{hotel.name}}</h3>
+    <h3 class="panel-title"><strong>{{hotel.cn_name}}</strong></h3>
     <button id="riskScoreBtn" type="button" ng-click="open()" class="pull-right btn btn-danger btn-sm">
-      Risk Score
+      Risk Rating
     </button>
   </div>
   <div class="panel-body">
+    <div class="row">
+      <dl class="dl-horizontal">
+        <dt>Address</dt><dd>{{hotel.address}}</dd>
+        <dt>Telephone</dt><dd>{{hotel.business_phone}}</dd>
+        <dt>Open Since</dt><dd>{{hotel.open_date}}</dd>
+        <dt>Total Rooms</dt><dd>{{hotel.units_amount}}</dd>
+        <dt>Average Room Price</dt><dd>{{hotel.avg_price}}</dd>
+      </dl>
+    </div>
     <div class="row">
       <div class="col-md-12">
         <div id="map"></div>
@@ -17,26 +26,25 @@
         <div id="streetView"></div>
       </div>
     </div>
-    <br />
-    <dl class="dl-horizontal">
-      <dt>Address</dt><dd>{{hotel.address}}</dd>
-      <dt>Telephone</dt><dd>{{hotel.tel}}</dd>
-      <dt>Open Since</dt><dd>{{hotel.openDate}}</dd>
-      <dt>Total Rooms</dt><dd>{{hotel.amountOfRooms}}</dd>
-      <dt>Average Room Price</dt><dd>{{hotel.averagePrice}}</dd>
-    </dl>
   </div>
 </div>
 
 <script type="text/ng-template" id="myModalContent.html">
   <div class="modal-header">
-    <h3 class="modal-title">Title</h3>
+    <h4 class="modal-title">{{hotel.cn_name}}</h4>
   </div>
   <div class="modal-body">
-    Body
+    <p><strong>{{hotel.cn_name}}</strong> is a <strong>{{hotel.star}}</strong> stars hotel, and is opened since <strong>{{hotel.open_date}}</strong>. </p>
+    <p>The risk rating result of {{hote.cn_name}} is <strong>{{rating.result}}</strong>, as it matches the following rules:</p>
+    <ul>
+      <li ng-repeat="rule in rating.matchedRules">
+        <span ng-show="rule == 1"> 234 of 667 hotels which Star = 02 and opened between 2004/5 and 2012/6 got accident </span>
+        <span ng-show="rule == 2"> 195 of 217 hotels which opened between 2004 and 2012 and has low booking rate, got accident </span>
+        <span ng-show="rule == 3"> 180 of 211 hotels which has rooms between 60 and 210 and has low booking rate, got accident </span>
+      </li>
+    </ul>
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" ng-click="ok()">OK</button>
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
   </div>
 </script>

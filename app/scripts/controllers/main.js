@@ -5,8 +5,8 @@ angular.module('sample_app')
     var address = encodeURIComponent(hotel.city + hotel.address);
     return 'http://apis.map.qq.com/ws/staticmap/v2/?' + 
       'center=' + address  +
-      '&zoom=16&size=200*150&maptype=roadmap&scale=1' +
-      '&markers=size:small|' + address +
+      '&zoom=16&size=200*150&maptype=roadmap&scale=2' +
+      '&markers=size:large|' + address +
       '&key=NJQBZ-QHURR-2K4WP-WOACV-QMWOE-DVBBX';
   };
 
@@ -75,9 +75,9 @@ angular.module('sample_app')
   $scope.open = function (size) {
     var modalInstance = $modal.open({
       templateUrl: 'myModalContent.html',
-        controller: 'HotelRiskScoreCtrl',
-        size: size,
-        resolve: {
+      controller: 'HotelRiskScoreCtrl',
+      size: size,
+      resolve: {
         hotel: function () {
           return $scope.hotel;
         }
@@ -90,12 +90,15 @@ angular.module('sample_app')
   };
 })
 
-.controller('HotelRiskScoreCtrl', function($scope, $modalInstance, hotel) {
+.controller('HotelRiskScoreCtrl', function($scope, $modalInstance, hotel, API) {
+
+  $scope.hotel = hotel;
+
+  API.rate(hotel.id, function(data) {
+    $scope.rating = data;
+  });
+
   $scope.ok = function () {
     $modalInstance.close(hotel.id);
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
   };
 });

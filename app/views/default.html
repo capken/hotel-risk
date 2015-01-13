@@ -7,14 +7,16 @@
 
 <br />
 
-<div class="list-group">
-  <div class="media" ng-repeat="hotel in hotels">
-    <a class="media-left" href="#/hotels/{{hotel.id}}">
-      <img class="hotel-img img-rounded" ng-src="{{mapImageURL(hotel)}}" alt="img">
-    </a>
-    <div class="media-body">
-    <h4 class="list-group-item-heading">{{hotel.name}}</h4>
-    <p class="list-group-item-text">{{hotel.address}}</p>
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="hotel in hotels">
+    <div class="thumbnail">
+      <a href="#/hotels/{{hotel.id}}">
+        <img ng-src="{{mapImageURL(hotel)}}" alt="hotel image">
+        <div class="caption">
+          <h4>{{hotel.name}}</h4>
+          <p>{{hotel.address}}</p>
+        </div>
+      </a>
     </div>
   </div>
 </div>
